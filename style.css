@@ -1,14 +1,21 @@
-body {
+/* Reset */
+* {
     margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
     font-family: 'Montserrat', sans-serif;
     color: white;
     background: linear-gradient(to bottom, #6f42c1, #20c997);
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
+/* Header */
 header {
     width: 100%;
     max-width: 1200px;
@@ -16,7 +23,6 @@ header {
     justify-content: space-between;
     align-items: center;
     padding: 20px;
-    box-sizing: border-box;
 }
 
 .logo {
@@ -26,27 +32,28 @@ header {
 
 nav ul {
     list-style: none;
-    margin: 0;
-    padding: 0;
     display: flex;
-}
-
-nav li {
-    margin: 0 15px;
+    gap: 15px;
 }
 
 nav a {
     color: white;
     text-decoration: none;
     font-size: 16px;
+    font-weight: 500;
+}
+
+/* Auth Buttons */
+.auth-buttons {
+    display: flex;
+    gap: 10px;
 }
 
 .auth-buttons a {
-    color: black;
-    text-decoration: none;
     padding: 10px 20px;
     border-radius: 5px;
-    margin-left: 10px;
+    text-decoration: none;
+    font-weight: 500;
 }
 
 .btn-signup {
@@ -55,20 +62,24 @@ nav a {
 }
 
 .btn-login {
-background-color: aliceblue;
+    background-color: aliceblue;
+    color: black;
 }
+
+/* Main Hero Section */
 main {
     flex-grow: 1;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
+    padding: 0 20px;
 }
 
 .hero-content h1 {
     font-size: 80px;
-    margin: 0;
     font-weight: bold;
+    line-height: 1.1;
 }
 
 .hero-content p {
@@ -76,12 +87,19 @@ main {
     margin: 20px 0;
 }
 
+.hero-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+}
+
 .hero-buttons a {
-    text-decoration: none;
     padding: 15px 30px;
     border-radius: 5px;
-    margin: 0 10px;
     font-size: 16px;
+    text-decoration: none;
+    font-weight: 500;
 }
 
 .btn-start {
@@ -92,4 +110,69 @@ main {
 .btn-explore {
     background-color: rgba(0, 0, 0, 0.2);
     color: black;
+}
+
+/* Responsive Media Queries */
+
+/* Tablets */
+@media (max-width: 992px) {
+    header {
+        flex-direction: column;
+        gap: 10px;
+    }
+    nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+    }
+    .hero-content h1 {
+        font-size: 60px;
+    }
+    .hero-content p {
+        font-size: 18px;
+    }
+    .hero-buttons a {
+        padding: 12px 25px;
+        font-size: 14px;
+    }
+}
+
+/* Mobile Phones */
+@media (max-width: 768px) {
+    header {
+        padding: 15px;
+    }
+    nav ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+    .auth-buttons {
+        flex-direction: column;
+        gap: 10px;
+    }
+    .hero-content h1 {
+        font-size: 45px;
+    }
+    .hero-content p {
+        font-size: 16px;
+    }
+    .hero-buttons a {
+        width: 100%;
+        text-align: center;
+        padding: 10px 20px;
+    }
+}
+
+/* Extra small devices (very small phones) */
+@media (max-width: 480px) {
+    .hero-content h1 {
+        font-size: 32px;
+    }
+    .hero-content p {
+        font-size: 14px;
+    }
+    .hero-buttons a {
+        font-size: 14px;
+        padding: 8px 15px;
+    }
 }
